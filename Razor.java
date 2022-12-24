@@ -1,4 +1,7 @@
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 
 public class Razor extends Hero implements AgilityHero{
 
@@ -7,18 +10,25 @@ public class Razor extends Hero implements AgilityHero{
         this.energiPlayer =100;
         this.speedHero = 52.1;
     }
+
     @Override
     public void descHero(){
-        System.out.println("anda memilih razor sebagai hero anda");
-        System.out.println("DESCRIPTION HERO : ");
-        System.out.println("=======================================");
-        System.out.println("name   : razor  ");
-        System.out.println("type   : Agility");
-        System.out.println(   "HP    :" + this.hitPoint + "%");
-        System.out.println("Energi   :" + this.energiPlayer + "%");
-        System.out.println("Speed    :" + this.speedHero + "%");
-        System.out.println("=======================================");
-        System.out.println("spesial wippon : special magic ( enery : 20%)");
+        // 
+        try{
+            PrintWriter output = new PrintWriter(new FileOutputStream("razor.txt"));
+            output.println("anda memilih Razor sebagai hero anda");
+            output.println("DESCRIPTION HERO : ");
+            output.println("=======================================");
+            output.println("name   :Razor  ");
+            output.println("type   :Agility");
+            output.println(   "HP    :" + this.energiPlayer + "%");
+            output.println("Energi   :" + this.energiPlayer + "%");
+            output.println("Speed    :" + this.speedHero + "%");
+            output.println("=======================================");
+            output.close();
+        }catch(FileNotFoundException e){
+           e.printStackTrace();
+        }
     }
     
     @Override
@@ -122,10 +132,10 @@ public class Razor extends Hero implements AgilityHero{
         System.out.println("============= Use Utullity Special Armor ================");
         System.out.println("hit point add 21 %");
         System.out.println();
-        System.out.println("name   : razor  ");
-        System.out.println("type   : Agility");
-        System.out.println(   "HP    :" + this.hitPoint + "%");
-        System.out.println("Energi   :" + this.energiPlayer + "%");
+        System.out.println("name    : razor  ");
+        System.out.println("type    : Agility");
+        System.out.println(   "HP     :" + this.hitPoint + "%");
+        System.out.println("Energi    :" + this.energiPlayer + "%");
         System.out.println("Speed    :" + this.speedHero + "%");
         System.out.println("===========================================");
 

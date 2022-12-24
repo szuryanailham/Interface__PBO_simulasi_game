@@ -1,25 +1,41 @@
 // import java.util.Scanner;
    
 import java.util.Scanner;
+
+//  LIBRARY BUFFERREADER 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
    
 class player {
-  public static void main(String args[]){
+  public static void main(String args[]) throws IOException{
             
     Scanner input = new Scanner(System.in);
-       
+ System.out.println("===========================");
+
+    // INPUT BUFFERREADER 
+      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+      
     int pilihan,hero,utullity;
     char ulang;
-        
+
+    // JOOPTIONPANE 
+  
         
         Razor razor =  new Razor();
         Zeus zeus = new Zeus();
         Pheonix Pheonix = new Pheonix();
-        
 
-         System.out.println("=================================");
+          System.out.println("=================================");
           System.out.println(" ......WELCOME TO DOTA 2........ ");
           System.out.println("=================================\t\t");
-    
+          System.out.println();
+          System.out.println("===========================");
+          System.out.print("masukan nama player :");
+          String userInput = reader.readLine();
+          System.out.println();
+          System.out.println("===========================");
+          System.out.println();
           System.out.println("choose Spesial Charakter :");
           System.out.println("1. RAZOR");
           System.out.println("2. ZUES");
@@ -27,12 +43,13 @@ class player {
            
           System.out.print("choose  your hero : ");
           hero = input.nextInt();
+          System.out.println();
         
         switch(hero){
             case 1:
             //  ================================= ACTION HERO ONE =========================
             do {
-                System.out.println("=================================");
+              System.out.println("======== Hallo"+" "+userInput + " ==============");
                 System.out.println("1.   description hero");
                 System.out.println("2.   begin attack ");
                 System.out.println("3.   defense from enemy");
@@ -101,7 +118,8 @@ class player {
                break;
                case 2:
                do {
-                System.out.println("=================================");
+             
+                System.out.println("======== Hallo"+" "+userInput + " ==============");
                 System.out.println("1.   description hero");
                 System.out.println("2.   begin attack ");
                 System.out.println("3.   defense from enemy");
@@ -171,7 +189,7 @@ class player {
                    //  ================================= ACTION HERO three =========================
                     case 3:
                     do {
-                        System.out.println("=================================");
+                      System.out.println("======== Hallo"+" "+userInput + " ==============");
                         System.out.println("1.   description hero");
                         System.out.println("2.   begin attack ");
                         System.out.println("3.   defense from enemy");
@@ -187,6 +205,7 @@ class player {
                           Pheonix.descHero();
                             break;
                           case 2:
+                          System.out.print("you damage for enemy :");
                           float damage = input.nextFloat();
                           Pheonix.attack(damage);
                             break;
