@@ -11,30 +11,32 @@ class player {
   public static void main(String args[]) throws IOException{
             
     Scanner input = new Scanner(System.in);
- System.out.println("===========================");
 
     // INPUT BUFFERREADER 
-      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-      
+      InputStreamReader isr = new InputStreamReader(System.in);
+
+      BufferedReader br = new BufferedReader(isr);
+
+    
     int pilihan,hero,utullity;
-    char ulang;
+    char ulang;  
+    Razor razor =  new Razor();
+    Zeus zeus = new Zeus();
+    Pheonix Pheonix = new Pheonix();
 
-    // JOOPTIONPANE 
-  
-        
-        Razor razor =  new Razor();
-        Zeus zeus = new Zeus();
-        Pheonix Pheonix = new Pheonix();
+    
+    String username = "player";
+    String password = "player123";
 
+    System.out.print("Masukkan username: ");
+    String userInput = br.readLine();
+    System.out.print("Masukkan password: ");
+    String passInput = input.nextLine();
+
+    if(username.equals(userInput) && password.equals(passInput)){
           System.out.println("=================================");
           System.out.println(" ......WELCOME TO DOTA 2........ ");
           System.out.println("=================================\t\t");
-          System.out.println();
-          System.out.println("===========================");
-          System.out.print("masukan nama player :");
-          String userInput = reader.readLine();
-          System.out.println();
-          System.out.println("===========================");
           System.out.println();
           System.out.println("choose Spesial Charakter :");
           System.out.println("1. RAZOR");
@@ -55,6 +57,7 @@ class player {
                 System.out.println("3.   defense from enemy");
                 System.out.println("4.   recall your hero");
                 System.out.println("5.   get weapon for hero");
+                System.out.println("6.   print Description");
                 System.out.println("=================================");
                  
                 System.out.print("Pilihan anda: ");
@@ -97,6 +100,9 @@ class player {
                     case 5:
                     razor.getWippon();
                     break;
+                    case 6:
+                    razor.PrintDescHero();
+                    break;
                   
                   default:
                     System.out.println("nothing action for this input");
@@ -125,6 +131,7 @@ class player {
                 System.out.println("3.   defense from enemy");
                 System.out.println("4.   recall your hero");
                 System.out.println("5.   get weapon for hero");
+                System.out.println("6.   print Description");
                 System.out.println("=================================");
                  
                 System.out.print("Pilihan anda: ");
@@ -167,6 +174,9 @@ class player {
                     case 5:
                     zeus.getWippon();
                     break;
+                    case 6:
+                    zeus.PrintDescHero();
+                    break;
                   
                   default:
                     System.out.println("nothing action for this input");
@@ -195,6 +205,7 @@ class player {
                         System.out.println("3.   defense from enemy");
                         System.out.println("4.   recall your hero");
                         System.out.println("5.   get weapon for hero");
+                        System.out.println("6.   print Description");
                         System.out.println("=================================");
                          
                         System.out.print("Pilihan anda: ");
@@ -220,6 +231,9 @@ class player {
                             case 5:
                             Pheonix.getWippon();
                             break;
+                            case 6:
+                            Pheonix.PrintDescHero();
+                            break;
                           
                           default:
                             System.out.println("nothing action for this input");
@@ -243,8 +257,12 @@ class player {
                       System.out.println(" your input is wrong");
                       break;
         }
+            }else{
+              System.out.println("Your name and password still wrong");
+
             }
   
+          }
   }
 
 

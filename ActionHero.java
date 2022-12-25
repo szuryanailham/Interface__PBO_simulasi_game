@@ -6,6 +6,7 @@ public abstract class  ActionHero {
     abstract void defense(float damageEnemy);
     abstract void recall( );
     abstract void getWippon();
+    abstract void PrintDescHero();
    
 
 }
