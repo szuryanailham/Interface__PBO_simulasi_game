@@ -17,7 +17,7 @@ class player {
 
       BufferedReader br = new BufferedReader(isr);
 
-    
+     
     int pilihan,hero,utullity;
     char ulang;  
     Razor razor =  new Razor();
